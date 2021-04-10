@@ -1,0 +1,752 @@
+/*RESET CSS*/
+
+*{
+    Margin:0;
+    padding:0;
+}
+
+ul, ol{
+    list-style: none;
+    font-size: 0;
+}
+
+a{
+    text-decoration: none;
+}
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,700&display=swap');
+
+
+/* ANIMACIONES */
+
+@keyframes zoomIn {
+    from{ 
+        transform-origin: center center;
+        transform: scale(0.1);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomInMax {
+    from{ 
+        transform-origin: center center;
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.5);
+    }
+}
+
+@keyframes downCalling {
+    0%{
+        transform: translate(0px, -20px);
+    }
+    25%{
+        opacity: 1;
+    }
+    75% {
+        transform: translate(0px,  0px);
+    }
+    85%{
+        transform: translate(0px, -12px);
+    }
+    90%{
+        transform: translate(0px, 0px);
+    }
+    93%{
+        transform: translate(0px, -8px);
+    }
+    95%{
+        transform: translate(0px, 0px);
+    }
+    96%{
+        transform: translate(0px, -5px);
+    }
+    97%{
+        transform: translate(0px, 0px);
+    }
+    98%{
+        transform: translate(0px, -2px);
+    }
+    99%{
+        transform: translate(0px, 0px);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* CSS GENERALES */
+
+html{
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+   
+}
+
+header{
+    width: 15%;
+    height: 100vh;
+    float: right;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    right: 0;
+}
+
+nav{
+
+}
+
+nav ul{
+
+}
+
+nav ul li{
+    
+}
+
+button{
+    width: 150px;
+    height: 40px;
+    background-color: coral;
+    border: none;
+    margin-top: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+
+select {
+    border: 2px solid coral;
+    border-radius: 50px;
+    width: 100%;
+    height: 40px;
+    padding: 0px 15px;
+    margin: 10px 0px 33px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    background-repeat: no-repeat;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDEyIDciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNMTIgMS4zMjQzMkwxMC42IC02LjExOTU5ZS0wOEw2IDQuMzUxMzVMMS40IC00LjYzMzQxZS0wN0wtNS43ODg4ZS0wOCAxLjMyNDMyTDYgN0wxMiAxLjMyNDMyWiIgZmlsbD0iIzU5NTk1OSIvPg0KPC9zdmc+DQo=);
+    background-position: calc(100% - 20px);
+}
+
+input {
+    border: solid 2px coral;
+    border-radius: 50px;
+    width: 100%;
+    height: 40px;
+    padding: 0px 15px;
+    margin: 10px 0px 33px;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+
+}
+
+footer{
+    width: 83%;
+    position: absolute;
+    bottom: 0px;
+    background-color: coral;
+    color: black;
+    font-weight: bold;
+    padding: 10px 0 10px 2%;
+    height: 2vh;
+
+}
+
+.transpStart{
+    opacity: 0;
+}
+
+/* GENERALES */
+
+nav.menuList{
+    width: 100%;
+    max-height: 500px;
+    text-align: center;
+}
+
+nav.menuList ul{
+    color:coral;
+    font-size: 20px;
+}
+
+nav.menuList ul li,
+nav.menuList ul li *{
+    padding:10px;
+    color: coral; 
+    
+}
+
+/* nav.menuList ul li a{
+    color: coral;    
+} */
+
+nav.menuList ul li:hover,
+nav.menuList ul li *:hover{
+    background-color: coral;
+    color: black; 
+}
+
+nav.menuList ul li:hover + nav.menuList ul li *{
+    color: black;
+}
+
+nav.menuList button:hover {
+    animation: zoomInMax 0.5s forwards;
+}
+
+#logo{
+    width: 50%;
+    max-width: 300px;
+    margin: 25%;
+}
+
+#workSocialMedia{
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+
+div#workSocialMedia ul{
+    width: 100%;
+}
+
+div#workSocialMedia ul li{
+    display: inline-block;
+    margin: 0px 0px;
+}
+
+.wrapper {
+    width: 85%;
+}
+
+.title{
+    width: 80%;
+    max-height: 10%;
+    text-align: center;
+    position: relative;
+    padding: 33px 0;
+    left: 10%;
+    top: 0%;
+}
+
+
+#aboutContent,
+#goalsContent,
+#portfoilContent,
+#hireContent {
+    height: 94vh;
+}
+
+/* ESTILOS CURRICULUM */
+
+#onBoarding{
+    width: 100%;
+    height: 100vh;
+}
+
+#hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(0deg, coral 0%,white 100%);
+}
+
+#onBoarding .title{
+    width: 85%;
+    max-height: 10%;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 35%;
+    animation: zoomIn 0.5s linear;
+}
+
+#onBoarding .title h1{
+    font-size: 105px;
+}
+
+#goToCv{
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    left: 37.5%;
+    top: 85%;
+    text-align: center;
+    font-weight: 900;
+    animation:downCalling 1s;
+    animation-timing-function:linear;
+    animation-delay:1s;
+    animation-fill-mode:forwards;
+    animation-iteration-count: 1;
+}
+
+#arrowToDown{
+    width: 30px;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 33px;  
+}
+
+#CV{
+    width: 100%;
+    height: 96vh;
+}
+
+#leftSideBar{
+    width: 20%;
+    height: 100vh;
+    float: left;
+    position: sticky;
+    top: 0;
+    left: 0;
+    border-right: solid 3px coral;
+}
+
+#miAvatar{
+
+}
+
+#selectors{
+    margin: 33px 10% 0;
+    width: 80%;
+}
+
+#selectors h3{
+    margin-left: 15px;
+}
+
+#selectors select{
+    
+}
+
+#selectors select option{
+
+}
+
+#bodyCV{
+    padding: 60px 20px 0px;
+    width: calc(80% - 40px);
+    margin-left: 20%;
+}
+
+.headerCV{
+
+}
+
+.postLogo{
+    width: 20%;
+    margin-left: 40%;
+}
+
+.postTitle{
+    margin-top: 15px;
+}
+
+.workInfo{
+    height: 30px;
+    margin: 15px 0px;
+    width: 100%;
+}
+
+.calendar{
+    float: right;
+}
+
+.spot{
+    float: left;
+}
+
+.calendar *,
+.spot * {
+    display: inline-block;
+}
+
+.jobInfo{
+
+}
+
+.jobInfo h3{
+    margin: 15px 0px;
+}
+
+.jobInfo p{
+
+}
+
+.mediaElement{
+
+}
+
+.skillsTable{
+
+}
+
+.skillsTable h3{
+
+}
+
+.skillsTable ul{
+    font-size: 16px;
+}
+
+.skillsTable ul li{
+    margin-bottom: 15px;
+}
+.references {
+
+}
+
+.references select{
+    position: absolute;
+    top: 101vh;
+    width: 12%;
+    right: 21%;
+}
+
+.references select option{
+
+}
+
+.referenceIcons{
+
+}
+
+.referenceIcons ul{
+
+}
+
+/* ESTILOS ABOUT*/
+
+#aboutContent {
+
+}
+
+#aboutBodyGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 24%);
+}
+
+@media only screen and (max-width: 1024px) {
+    #aboutBodyGrid{
+        grid-template-columns: repeat(2, 49%);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #aboutBodyGrid{
+        grid-template-columns: 98%;
+    }
+}
+
+/* ESTILOS GOALS */
+
+
+#goalsContent {
+
+}
+
+#gridCard{
+    display: grid;
+    grid-template-columns: repeat(4, 24%);
+    grid-template-rows: 50vh;
+    grid-gap: 1%;
+}
+
+@media only screen and (max-width: 1024px) {
+    #gridCard{
+        grid-template-columns: repeat(2, 49%);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #gridCard{
+        grid-template-columns: 98%;
+    }
+}
+
+.goalCard{
+    background-color: coral;
+    border-radius: 30px;
+    padding: 15px;
+    
+}
+
+.goalCard h2{
+    margin: 15px auto;
+    display: block;
+    width: fit-content;
+}
+
+hr.cardGap {
+    border:1px solid black;
+    width: 80%;
+    margin: 10px 10%;
+}
+
+.goalCard table{
+    height: 80%;
+    width: 100%;
+}
+
+.goalCard table thead{
+    background: black;
+    color: white;    
+}
+
+.goalCard table thead tr{
+    height: 60px;
+    
+}
+
+.goalCard table thead tr td{
+    text-align: center;
+}
+
+.goalCard table tbody{
+    
+}
+
+.goalCard table tbody tr{
+    
+}
+
+.goalCard table tbody tr td{
+    
+}
+
+#goal3D {
+
+}
+
+#goalHTML {
+    
+}
+
+#goalCAD {
+    
+}
+
+#goalEditorial {
+    
+}
+
+/* ESTILOS PORTFOIL */
+
+#portfoilContent {
+
+}
+
+#mainPortfoil {
+    padding: 2%;
+    flex: 1 1 80%;
+    min-height: 50vh;
+}
+
+#portfoilSlider {
+    display: grid;
+    height: 69vh;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+
+}
+
+.slide{
+    background-color: gainsboro;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color:white;
+    font-weight: bolder;
+    position: relative;
+    z-index: 1;   
+}
+
+.slide::before{
+    content: '';
+    background-color: black;
+    opacity: 0.85;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.slide:hover{
+    font-size: 1.65em;
+    font-weight:lighter; 
+}
+
+.slide:hover::before{
+    content: '';
+    background-color: black;
+    opacity: 0;
+}
+
+.cuadSma{
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.cuadMid{
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.cuadLar{
+    grid-row: span 3;
+    grid-column: span 3;
+}
+
+.cuadTal{
+    grid-row: span 3;
+    grid-column: span 2;
+}
+
+.cuadWid{
+    grid-row: span 2;
+    grid-column: span 3;
+}
+
+#portfoil1 {
+    background-image: url('../assets/images.jpg');
+}
+
+#portfoil2 {
+    background-image: url();
+}
+
+#portfoil3 {
+    background-image: url();
+}
+
+#portfoil4 {
+    background-image: url();
+}
+
+#portfoil5 {
+    background-image: url();
+}
+
+#portfoil6 {
+    background-image: url();
+}
+
+
+/* .portfoil{
+
+}
+
+.slideImg{
+
+}
+
+.slideTxt{
+
+}
+
+.slideTxt h1{
+    
+}
+
+.slideTxt p{
+    
+}
+
+#slider1,
+#slider2,
+#slider3,
+#slider4,
+#slider5 {
+    
+} */
+
+
+/* ESTILOS HIRE */
+
+#hireContent {
+
+}
+
+#hireFormContent {
+    width: 60%;
+    margin: 33px 15% 0px 15%;
+}
+
+#hireFormContent form{
+
+}
+
+#hireFormContent form label{
+    display: block;
+    
+}
+
+#hireFormContent form input{
+    display: block;
+}
+
+input#hireName {
+
+}
+
+input#hireMail {
+    
+}
+
+input#notRobot {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+}
+
+input#sendBtn {
+    width: 33.33333%;
+    display: block;
+    margin:30px 33.33333%;
+}
+
+#hireFormContent form select{
+    
+}
+
+select#hireTech {
+    
+}
+
+#hireFormContent form textarea{
+    
+}
+
+textarea#hireText {
+    border-radius: 50px;
+    width: 100%;
+    height: 150px;
+    padding: 0px 15px;
+    margin: 10px 0px 33px;
+}

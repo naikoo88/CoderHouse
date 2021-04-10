@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!--<link rel="stylesheet" href="css/curriculum.css">-->
+    <title>Mi CV Online</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href="index.html"><div id="logo"><img src="assets/logo.svg" alt="Curriculum de Nicolas Colombero"></div></a>
+            <nav class="menuList">
+            <ul>
+                <li><a href="index.html#CV">Mi Curriculum</a></li>
+                <li><a href="about.html">Sobre Mi</a></li>
+                <li><a href="goals.html">Logros</a></li>
+                <li><a href="portfoil.html">Portfolio</a></li>
+            </ul>
+            <button type="button" onClick="window.location = 'hire.html'">Contratar</button>
+            <div id="workSocialMedia">
+                <ul>
+                    <li><i class="fab fa-linkedin-in"></i></li>
+                    <li><i class="fab fa-behance"></i></li>
+                    <li><i class="fab fa-github"></i></li>
+                </ul>
+            </div>
+            </nav>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div id="onBoarding">
+            <div id="hero">
+            </div>
+            <div class="title">
+                <h1>Bienvenido</h1>
+                <h2>Todo lo que te interesa Sobre Mi en un solo lugar</h2>
+            </div>
+            <div id="goToCv" class="transpStart">
+                <p>Ver CV</p>
+                <a href="#CV"><div id="arrowToDown"><i class="fas fa-arrow-down"></i></div></a>
+            </div>
+        </div>
+        <div id="CV">
+        <div id="leftSideBar">
+            <div id="miAvatar">
+                <img src="assets/NicolasColombero_Avatar.jpg" alt="Imagen de mi rostro. Mitad niño, mitad adulto" width="80%" style="margin: 10px 10%">
+            </div>
+            <div id="selectors">
+                <h3>Experiencia laboral</h3>
+                <select name="jobExp">
+                    <option value="jExp0" selected>Selecciona un trabajo</option>
+                    <option value="jExp1">Trabajo 1</option>
+                    <option value="jExp2">Trabajo 2</option>
+                    <option value="jExp3">Trabajo 3</option>
+                </select>
+
+                <h3>Experiencia academica</h3>
+                <select name="study">
+                    <option value="stud0" selected>Selecciona un estudio</option>
+                    <option value="stud1">Colegio</option>
+                    <option value="stud2">Secundario</option>
+                    <option value="stud3">Terciario</option>
+                    <option value="stud4">Universitario</option>
+                    <option value="stud5">Posgrados</option>
+                    <option value="stud6">Cursos</option>
+                </select>
+
+                <h3>Logros</h3>
+                <select name="achievement">
+                    <option value="achiv0" selected>Selecciona una meta</option>
+                    <option value="achiv1">Premio 1</option>
+                    <option value="achiv2">Reconocimiento 1</option>
+                    <option value="achiv3">Reconocimiento 2</option>
+                    <option value="achiv4">Meta lograda 1</option>
+                    <option value="achiv5">Meta lograda 2</option>
+                    <option value="achiv6">Meta lograda 3</option>
+                    <option value="achiv7">Meta lograda 4</option>
+                </select>
+            </div>
+        </div>
+        <div id="bodyCV">
+            <div class="headerCV">
+                <div class="postLogo">
+                    <img src="assets/logo_trabajo1.svg" />
+                </div>
+                <div class="postTitle">
+                    <h1>Titulo de la Entrada</h1>
+                </div>
+            </div>
+            <div class="workInfo">
+                <div class="calendar"><i class="far fa-calendar-alt"></i> <p>fecha de inicio - fecha de egreso</p>
+                </div>
+                <div class="spot"><i class="fas fa-map-marker-alt"></i> <p>ubicacion</p>
+                </div>
+            </div>
+            <div class="jobInfo">
+                <h3>Titulo del cargo</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac ex quis sapien dignissim
+                        porttitor. Cras ipsum sem, hendrerit quis ante ut, sodales pulvinar enim. Phasellus magna lacus,
+                        venenatis quis aliquam vitae, porta scelerisque magna. Nullam quis mi dictum, pretium tellus
+                        vel, condimentum nisi. Aliquam nec lorem augue. In hac habitasse platea dictumst. Cras et lacus
+                        eget nisi hendrerit interdum ac eget ipsum. Cras commodo, nisi vitae venenatis ultricies, justo
+                        felis cursus erat, sed sodales felis dui nec purus.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac ex quis sapien dignissim
+                        porttitor. Cras ipsum sem, hendrerit quis ante ut, sodales pulvinar enim.</p>
+                    <div class="mediaElement"></div>
+                    <div class="skillsTable">
+                        <h3>Titulo de skills</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Habilidad o Experiencia 1</li>
+                            <li><i class="fas fa-check"></i> Habilidad o Experiencia 2</li>
+                            <li><i class="fas fa-check"></i> Habilidad o Experiencia 3</li>
+                            <li><i class="fas fa-check"></i> Habilidad o Experiencia 4</li>
+                            <li><i class="fas fa-check"></i> Habilidad o Experiencia 5</li>
+                        </ul>
+                    </div>
+            </div>
+            <div class="references">
+                <select name="ref">
+                    <option value="ref0" selected>Referencias</option>
+                    <option value="ref1">Mark Myst - Cargo <a href="#"><i class="phone"></i></a></option>
+                    <option value="ref2">Joe Dou - Cargo <a href="#"><i class="mail"></i></a><a href="#"><i class="phone"></i></a></option>
+                </select>
+            </div>
+            <!--Moile reference icons-->
+            <div class="referenceIcons">
+                <ul>
+                    <li><a href="#"><i class="mail"></i></a></li>
+                    <li><a href="#"><i class="phone"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </div>    
+    <footer style="position:relative; bottom: 0px;">
+        <p style="position: absolute;">Sitio desarrollado por Nicolas Colomber. Derechos reservados 2021®</p>
+    </footer>
+
+</body>
+
+</html>
