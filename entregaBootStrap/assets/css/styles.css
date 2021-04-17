@@ -1,0 +1,25 @@
+#hire_btn:hover, .nc_btn:hover {
+  color: #fdfdfd;
+}
+
+#hire_btn, .nc_btn {
+  font-weight: bold;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+#hero-btns {
+  column-gap: 20%;
+}
+
+.links {
+  color: #ffc107;
+  margin-top: 30px;
+}
+
+.links:hover {
+  color: #fbfbfb;
+}
+
