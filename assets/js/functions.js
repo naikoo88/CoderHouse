@@ -4,7 +4,7 @@
         console.log('Arranco el script');
         $('.nc_item').hide();
         console.log('Se ocultan todos los items');
-        $('#cv_item_default').show();
+        $('.nc_item_default').show();
         console.log('Muestro unicamente el dafault');
      
      //SI SE MUESTRA UNA OPCION SE OCULTAN LAS OTRAS
@@ -53,7 +53,8 @@
                 console.log('Se ocultaron los .selectors mobile.');
                 $('.nc_item').hide();
                 console.log('Se cierran todos los items');
-                $('#nc_item_default').show();
+                $('.nc_item_default').show();
                 console.log('Se muestra deja unicamente el item dafault');
         });
     });
+    
