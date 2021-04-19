@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>CV_NicolasColombero</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/Highlight-Blue.css">
     <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
@@ -16,8 +20,8 @@
     <nav class="navbar navbar-light navbar-expand-md bg-dark navigation-clean-button">
         <div class="container"><a class="navbar-brand d-flex justify-content-xl-center align-items-xl-center" href="#"><img class="img-fluid float-none justify-content-xl-center align-items-xl-center" src="assets/img/logo.svg" loading="auto" style="min-width: 90px;max-width: 125px;"></a>
             <button
-                data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navcol-1">
+                data-toggle="collapse" class="navbar-toggler" data-target="#menu" style="color: #ffc107;"><span class="sr-only">Toggle navigation</span><i class="fas fa-bars" style="font-size: 29px;"></i></button>
+                <div class="collapse navbar-collapse" id="menu">
                     <ul class="nav navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link active text-warning" href="#">Curriculum</a></li>
                         <li class="nav-item"><a class="nav-link text-warning" href="#">Sobre Mi</a></li>
@@ -26,19 +30,675 @@
                     </ul><span class="navbar-text actions"> <a class="btn btn-warning nc_btn" role="button" data-bs-hover-animate="pulse" id="hire_btn" href="#">CONTRATAR</a></span></div>
         </div>
     </nav>
-    <div class="d-flex d-sm-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center" data-bs-parallax-bg="true" style="height: 100vh;background: linear-gradient(rgba(0,0,0,0.1), #333333), url(&quot;https://unsplash.it/1800/900?image=1051&quot;) center / cover;">
-        <div class="container">
+    <div class="d-flex d-sm-flex justify-content-center align-items-center justify-content-sm-center justify-content-xl-center" data-bs-parallax-bg="true" id="hero">
+        <div id="video_container"><video id="videoHero" controls="" autoplay="" loop="" muted=""><source src="C:/Users/ncolombero/OneDrive/CoderHouse/proyecto_git/entregaBootStrap/assets/img/bg-video.mp4" type="video/mp4"></video></div>
+        <div class="container d-flex flex-column justify-content-center align-items-center"
+            style="min-width: 100%;">
             <div class="intro">
-                <h1 class="display-2 text-center text-light">Bienvido a mi CV</h1>
-                <p class="text-center text-light">Todo lo que nesecitas saber sobre mi carrera profesional en un solo lugar.</p>
+                <h1 class="display-3 text-center text-light" style="text-shadow: 0px 0px 20px #343a40;">Bienvido a mi CV</h1>
+                <h2 class="text-center text-light nc_subtitulos" style="text-shadow: 0px 0px 20px #343a40;">Todo lo que nesecitas saber sobre mi carrera profesional en un solo lugar.</h2>
             </div>
-            <div class="text-center d-block d-sm-inline-block justify-content-sm-center align-items-sm-center buttons" id="hero-btns" style="margin: 0px;margin-top: 78px;"><a class="btn btn-warning btn-lg text-uppercase d-flex d-sm-flex justify-content-center align-items-center nc_btn" role="button" href="#">ver cv</a><a class="btn btn-lg text-uppercase d-flex d-sm-flex justify-content-center align-items-center links"
-                    role="button" href="#" target="_blank">contratar</a></div>
+            <div class="text-center d-flex d-sm-flex flex-column justify-content-center align-items-center flex-sm-column justify-content-sm-center align-items-sm-center flex-md-row buttons" id="hero_btns" style="margin: 0px;margin-top: 78px;width: 100%;"><a class="btn btn-warning btn-lg text-uppercase d-flex d-sm-flex justify-content-center align-items-center justify-content-sm-center nc_btn" role="button" href="#verCV">ver cv</a><a class="btn btn-dark btn-lg text-uppercase d-flex d-sm-flex justify-content-center align-items-center nc_links"
+                    role="button" id="hero_link" href="#" target="_blank">contratar</a></div>
         </div>
     </div>
+    <div class="container-fluid nc_container">
+        <div class="row" id="verCV">
+            <div class="col-12 d-block d-sm-block d-lg-none" id="nc_cv_selector">
+                <div class="row" id="icon_cv_container" style="background: rgb(52,58,64);">
+                    <div class="col reset"><button class="btn btn_icon_select" type="button" data-toggle="collapse" data-target="#trabajos" data-parent="#icon_cv_container"><i class="fas fa-suitcase cv_icon_select"></i></button></div>
+                    <div class="col reset" style="border-right-style: solid;border-right-color: #ffc107;border-left-style: solid;border-left-color: #ffc107;"><button class="btn btn_icon_select" type="button" data-toggle="collapse" data-target="#estudios" data-parent="#icon_cv_container"><i class="fas fa-graduation-cap cv_icon_select"></i></button></div>
+                    <div class="col reset"><button class="btn btn_icon_select" type="button" data-toggle="collapse" data-target="#actividades" data-parent="#icon_cv_container"><i class="fas fa-flag-checkered cv_icon_select"></i></button></div>
+                </div>
+                <div class="row options_select collapse" id="trabajos">
+                    <div class="col"><label class="text-center d-flex d-sm-flex justify-content-center align-items-center">Elegí uno de mis trabajos</label><select class="custom-select custom-select-lg d-block justify-content-center align-items-center selector" id="trabajoSelector"
+                            name="misTrabajos"><optgroup label="Agencias"><option value="" selected="" class="item_select trabajo_itemSelect" data-toggle="collapse" data-target="#balloonGroup">-----------------------------------</option><option value="balloongroup" class="item_select trabajo_itemSelect">Balloon Group</option><option value="dolmastudio" class="item_select trabajo_itemSelect">Dolma Studio</option><option value="vida" class="item_select trabajo_itemSelect">Grupo Vi-Da</option><option value="yyr" class="item_select trabajo_itemSelect">Young &amp; Rubicam</option><option value="mrm" class="item_select trabajo_itemSelect">MRM // McCann</option><option value="agrofy">Agrofy</option></optgroup></select></div>
+                </div>
+                <div class="row options_select collapse" id="estudios">
+                    <div class="col"><label class="text-center d-flex d-sm-flex justify-content-center align-items-center">Elegí uno de mis estudios</label><select class="custom-select custom-select-lg d-block justify-content-center align-items-center selector" id="estudiosSelector"
+                            name="misTrabajos"><optgroup label="Seleccioná una Institucion"><option value="" selected="">------------------------------------------------</option><option value="itpa">Instituto Tecnologico Philips Argentina</option><option value="ipm">Instituto Politecnico Modelo</option><option value="davinci">Escuela DaVinci</option><option value="utn">INSPT-UTN</option><option value="linkedin">Linkedin Learning</option><option value="coderhouse">CoderHouse</option></optgroup></select></div>
+                </div>
+                <div class="row options_select collapse" id="actividades">
+                    <div class="col"><label class="text-center d-flex d-sm-flex justify-content-center align-items-center">Elegí una de mis actividades</label><select class="custom-select custom-select-lg d-block justify-content-center align-items-center selector" id="actividadesSelector"
+                            name="misTrabajos"><optgroup label="Seleccione una agencia"><option value="" selected="">------------------------------------------------</option><option value="modelado3d">Modelado 3D</option><option value="botanica">Botanica</option><option value="windsurf">WindSurf</option></optgroup></select></div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-3 text-center d-none d-sm-none d-lg-flex flex-column justify-content-xl-center" id="nc_cv_selector_desktop">
+                <div class="row options_select" id="trabajos_desktop">
+                    <div class="col"><label class="text-center d-flex d-sm-flex justify-content-center align-items-center">Elegí uno de mis trabajos</label><select class="custom-select custom-select-lg d-block justify-content-center align-items-center selector" id="trabajoSelector_desktop"
+                            name="misTrabajos"><optgroup label="Agencias"><option value="" selected="" class="item_select trabajo_itemSelect" data-toggle="collapse" data-target="#balloonGroup">-----------------------------------</option><option value="balloongroup" class="item_select trabajo_itemSelect">Balloon Group</option><option value="dolmastudio" class="item_select trabajo_itemSelect">Dolma Studio</option><option value="vida" class="item_select trabajo_itemSelect">Grupo Vi-Da</option><option value="yyr" class="item_select trabajo_itemSelect">Young &amp; Rubicam</option><option value="mrm" class="item_select trabajo_itemSelect">MRM // McCann</option><option value="agrofy">Agrofy</option></optgroup></select></div>
+                </div>
+                <div class="row options_select" id="estudio_desktop">
+                    <div class="col"><label class="text-center d-flex d-sm-flex justify-content-center align-items-center">Elegí uno de mis estudios</label><select class="custom-select custom-select-lg d-block justify-content-center align-items-center selector" id="estudiosSelector_desktop"
+                            name="misTrabajos"><optgroup label="Seleccioná una Institucion"><option value="" selected="">------------------------------------------------</option><option value="itpa">Instituto Tecnologico Philips Argentina</option><option value="ipm">Instituto Politecnico Modelo</option><option value="davinci">Escuela DaVinci</option><option value="utn">INSPT-UTN</option><option value="linkedin">Linkedin Learning</option><option value="coderhouse">CoderHouse</option></optgroup></select></div>
+                </div>
+                <div class="row options_select" id="actividades_desktop">
+                    <div class="col"><label class="text-center d-flex d-sm-flex justify-content-center align-items-center">Elegí una de mis actividades</label><select class="custom-select custom-select-lg d-block justify-content-center align-items-center selector" id="actividadesSelector_desktop"
+                            name="misTrabajos"><optgroup label="Seleccione una agencia"><option value="" selected="">------------------------------------------------</option><option value="modelado3d">Modelado 3D</option><option value="botanica">Botanica</option><option value="windsurf">WindSurf</option></optgroup></select></div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-9" id="nc_cv_item">
+                <div class="row" id="nc_item_trabajos">
+                    <div class="col-12 nc_item nc_trabajo" id="cv_balloongroup">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><img class="nc_logo" src="assets/img/balloonGroupLogo.png"></div>
+                            <div class="col-sm-12 nc_item_fecha">
+                                <h4 class="text-center nc_titulo nc_fecha_titulo">Fecha de Ingreso</h4>
+                                <p class="text-center">1, Enero de 2010</p>
+                                <h4 class="text-center nc_titulo nc_fecha_titulo">Fecha de Egreso</h4>
+                                <p class="text-center">30, Junio de 2010</p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">Diseñador Web</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Diseño Gráfico</li>
+                                    <li>Maquetado Web</li>
+                                    <li>Desarrollo en PHP</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 nc_item_op2">
+                                <h3 class="nc_titulo">Referencias</h3>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:tel="555-5555">MAIO,&nbsp; Yamila</a></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-mail-bulk"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:mailto="minces@martin.com">MINCES,&nbsp; Martín</a></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 d-none nc_item_op3"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 nc_item nc_trabajo" id="cv_dolmastudio">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><img class="nc_logo" src="assets/img/dolmaLogo.jpg"></div>
+                            <div class="col-sm-12 nc_item_fecha">
+                                <h3 class="text-center nc_titulo nc_fecha_titulo">Fecha de Ingreso</h3>
+                                <p class="text-center">1, Enero de 2011</p>
+                                <h3 class="text-center nc_titulo nc_fecha_titulo">Fecha de Egreso</h3>
+                                <p class="text-center">30, Diciembre de 2013</p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">Diseñador Web</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Diseño Gráfico</li>
+                                    <li>Maquetado Web</li>
+                                    <li>Desarrollo en PHP</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 nc_item_op2">
+                                <h3 class="nc_titulo">Referencias</h3>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:tel="555-5555">MAIO,&nbsp; Yamila</a></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-mail-bulk"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:mailto="minces@martin.com">MINCES,&nbsp; Martín</a></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 d-none nc_item_op3"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 nc_item nc_trabajo" id="cv_vida">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><img class="nc_logo" src="assets/img/vidaLogo.jpg"></div>
+                            <div class="col-sm-12 nc_item_fecha">
+                                <h3 class="text-center nc_titulo nc_fecha_titulo">Fecha de Ingreso</h3>
+                                <p class="text-center">1, Enero de 2014</p>
+                                <h3 class="text-center nc_titulo nc_fecha_titulo">Fecha de Egreso</h3>
+                                <p class="text-center">30, Abril de 2016</p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">Diseñador Gráfico</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Diseño gráfico editorial</li>
+                                    <li>Maquetado HTML para eBooks</li>
+                                    <li>Maquetado editorial</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 nc_item_op2">
+                                <h3 class="nc_titulo">Referencias</h3>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:tel="555-5555">MAIO,&nbsp; Yamila</a></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-mail-bulk"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:mailto="minces@martin.com">MINCES,&nbsp; Martín</a></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 d-none nc_item_op3"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 nc_item nc_trabajo" id="cv_yyr">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><img class="nc_logo" src="assets/img/yyrLogo.gif"></div>
+                            <div class="col-sm-12 nc_item_fecha">
+                                <h3 class="text-center nc_titulo nc_fecha_titulo">Fecha de Ingreso</h3>
+                                <p class="text-center">15, Mayo de 2016</p>
+                                <h3 class="text-center nc_titulo nc_fecha_titulo">Fecha de Egreso</h3>
+                                <p class="text-center">30, Junio de 2018</p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">Diseñador Web</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Diseño gráfico</li>
+                                    <li>Retoque fotográfico</li>
+                                    <li>Maquetado Web</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 nc_item_op2">
+                                <h3 class="nc_titulo">Referencias</h3>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:tel="555-5555">MAIO,&nbsp; Yamila</a></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-mail-bulk"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:mailto="minces@martin.com">MINCES,&nbsp; Martín</a></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 d-none nc_item_op3"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 nc_item nc_trabajo" id="cv_mrm">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><img class="nc_logo" src="assets/img/mrmLogo.jpg"></div>
+                            <div class="col-sm-12 nc_item_fecha">
+                                <h3 class="text-center nc_titulo nc_fecha_titulo">Fecha de Ingreso</h3>
+                                <p class="text-center">1, Enero de 2017</p>
+                                <h3 class="text-center nc_titulo nc_fecha_titulo">Fecha de Egreso</h3>
+                                <p class="text-center">25, Diciembre de 2020</p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">Desarrollador Web</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Diseño Gráfico</li>
+                                    <li>Animaciones en HTML5</li>
+                                    <li>Desarrollo FrontEnd</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 nc_item_op2">
+                                <h3 class="nc_titulo">Referencias</h3>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:tel="555-5555">MAIO,&nbsp; Yamila</a></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-mail-bulk"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:mailto="minces@martin.com">MINCES,&nbsp; Martín</a></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 d-none nc_item_op3"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 nc_item nc_trabajo" id="cv_agrofy">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><img class="nc_logo" src="assets/img/agrofyLogo.png"></div>
+                            <div class="col-sm-12 nc_item_fecha">
+                                <h3 class="text-center nc_titulo nc_fecha_titulo">Fecha de Ingreso</h3>
+                                <p class="text-center">4, Enero de 2021</p>
+                                <h3 class="text-center nc_titulo nc_fecha_titulo">Trabajo Actual</h3>
+                            </div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">Desarrollador FrontEnd</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Maquetado Web</li>
+                                    <li>Desarrollo Front End</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 nc_item_op2">
+                                <h3 class="nc_titulo">Referencias</h3>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:tel="555-5555">MAIO,&nbsp; Yamila</a></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-mail-bulk"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:mailto="minces@martin.com">MINCES,&nbsp; Martín</a></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 d-none nc_item_op3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="nc_item_estudios">
+                    <div class="col-12 nc_item nc_estudio" id="cv_itpa">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><img class="nc_logo" src="assets/img/itpaLogo.jpg"></div>
+                            <div class="col-sm-12 nc_item_fecha">
+                                <h4 class="text-center nc_titulo nc_fecha_titulo">Fecha de Ingreso</h4>
+                                <p class="text-center">1, Enero de 2010</p>
+                                <h4 class="text-center nc_titulo nc_fecha_titulo">Fecha de Egreso</h4>
+                                <p class="text-center">30, Junio de 2010</p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">Técnico Electromecánico</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Diseño Gráfico</li>
+                                    <li>Maquetado Web</li>
+                                    <li>Desarrollo en PHP</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 nc_item_op2">
+                                <h3 class="nc_titulo">Referencias</h3>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:tel="555-5555">MAIO,&nbsp; Yamila</a></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-mail-bulk"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:mailto="minces@martin.com">MINCES,&nbsp; Martín</a></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 d-none nc_item_op3"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 nc_item nc_estudio" id="cv_ipm">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><img class="nc_logo" src="assets/img/ipmLogo.jpg"></div>
+                            <div class="col-sm-12 nc_item_fecha">
+                                <h4 class="text-center nc_titulo nc_fecha_titulo">Fecha de Ingreso</h4>
+                                <p class="text-center">1, Enero de 2010</p>
+                                <h4 class="text-center nc_titulo nc_fecha_titulo">Fecha de Egreso</h4>
+                                <p class="text-center">30, Junio de 2010</p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">Técnico Mecánico</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Diseño Gráfico</li>
+                                    <li>Maquetado Web</li>
+                                    <li>Desarrollo en PHP</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 nc_item_op2">
+                                <h3 class="nc_titulo">Referencias</h3>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:tel="555-5555">MAIO,&nbsp; Yamila</a></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-mail-bulk"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:mailto="minces@martin.com">MINCES,&nbsp; Martín</a></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 d-none nc_item_op3"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 nc_item nc_estudio" id="cv_davinci">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><img class="nc_logo" src="assets/img/davinciLogo.jpg" style="max-width: 200px;"></div>
+                            <div class="col-sm-12 nc_item_fecha">
+                                <h4 class="text-center nc_titulo nc_fecha_titulo">Fecha de Ingreso</h4>
+                                <p class="text-center">1, Enero de 2010</p>
+                                <h4 class="text-center nc_titulo nc_fecha_titulo">Fecha de Egreso</h4>
+                                <p class="text-center">30, Junio de 2010</p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">Diseñador Digital</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Diseño Gráfico</li>
+                                    <li>Maquetado Web</li>
+                                    <li>Desarrollo en PHP</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 nc_item_op2">
+                                <h3 class="nc_titulo">Referencias</h3>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:tel="555-5555">MAIO,&nbsp; Yamila</a></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-mail-bulk"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:mailto="minces@martin.com">MINCES,&nbsp; Martín</a></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 d-none nc_item_op3"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 nc_item nc_estudio" id="cv_utn">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><img class="nc_logo" src="assets/img/utnLogo.jpg"></div>
+                            <div class="col-sm-12 nc_item_fecha">
+                                <h4 class="text-center nc_titulo nc_fecha_titulo">Fecha de Ingreso</h4>
+                                <p class="text-center">1, Enero de 2010</p>
+                                <h4 class="text-center nc_titulo nc_fecha_titulo">Fecha de Egreso</h4>
+                                <p class="text-center">30, Junio de 2010</p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">Técnico Informático</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Diseño Gráfico</li>
+                                    <li>Maquetado Web</li>
+                                    <li>Desarrollo en PHP</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 nc_item_op2">
+                                <h3 class="nc_titulo">Referencias</h3>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:tel="555-5555">MAIO,&nbsp; Yamila</a></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-mail-bulk"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:mailto="minces@martin.com">MINCES,&nbsp; Martín</a></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 d-none nc_item_op3"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 nc_item nc_estudio" id="cv_linkedin">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><img class="nc_logo" src="assets/img/linkedinLogo.jpg" style="max-width: 200px;"></div>
+                            <div class="col-sm-12 nc_item_fecha">
+                                <h4 class="text-center nc_titulo nc_fecha_titulo">Fecha de Ingreso</h4>
+                                <p class="text-center">1, Enero de 2010</p>
+                                <h4 class="text-center nc_titulo nc_fecha_titulo">Fecha de Egreso</h4>
+                                <p class="text-center">30, Junio de 2010</p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">SCRUM Master</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Diseño Gráfico</li>
+                                    <li>Maquetado Web</li>
+                                    <li>Desarrollo en PHP</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 nc_item_op2">
+                                <h3 class="nc_titulo">Referencias</h3>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:tel="555-5555">MAIO,&nbsp; Yamila</a></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-mail-bulk"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:mailto="minces@martin.com">MINCES,&nbsp; Martín</a></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 d-none nc_item_op3"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 nc_item nc_estudio" id="cv_coderHouse">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><img class="nc_logo" src="assets/img/coderLogo.png" style="max-width: 200px;"></div>
+                            <div class="col-sm-12 nc_item_fecha">
+                                <h4 class="text-center nc_titulo nc_fecha_titulo">Fecha de Ingreso</h4>
+                                <p class="text-center">1, Enero de 2010</p>
+                                <h4 class="text-center nc_titulo nc_fecha_titulo">Fecha de Egreso</h4>
+                                <p class="text-center">30, Junio de 2010</p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">Desarrollador Front-End</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Diseño Gráfico</li>
+                                    <li>Maquetado Web</li>
+                                    <li>Desarrollo en PHP</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 nc_item_op2">
+                                <h3 class="nc_titulo">Referencias</h3>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:tel="555-5555">MAIO,&nbsp; Yamila</a></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center align-items-center nc_icon_avatar"><i class="fas fa-mail-bulk"></i></div>
+                                    <div class="col-9 d-flex justify-content-start align-items-center nc_contacto"><a class="nc_referencia" href:mailto="minces@martin.com">MINCES,&nbsp; Martín</a></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 d-none nc_item_op3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="nc_item_actividades">
+                    <div class="col-12 nc_item nc_actividad" id="cv_modelado3d">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><i class="fab fa-codepen cv_actividades_icon"></i></div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">Modelado 3D</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Diseño Gráfico</li>
+                                    <li>Maquetado Web</li>
+                                    <li>Desarrollo en PHP</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 nc_item nc_actividad" id="cv_botanica">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><i class="fas fa-leaf cv_actividades_icon"></i></div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">Botánica</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Diseño Gráfico</li>
+                                    <li>Maquetado Web</li>
+                                    <li>Desarrollo en PHP</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 d-none nc_item_op3"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 nc_item nc_actividad" id="cv_windsurf">
+                        <div class="row nc_item_cabecera">
+                            <div class="col-sm-12 d-flex justify-content-center align-items-center nc_item_logo" style="padding: 20px;"><i class="fa fa-support cv_actividades_icon"></i></div>
+                        </div>
+                        <div class="row nc_item_cuerpo">
+                            <div class="col-sm-12 nc_item_texto">
+                                <h3 class="display-4 text-center nc_cargo_tit">WindSurf</h3>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet mauris ut turpis suscipit laoreet at sagittis justo. Praesent et massa ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                    vestibulum justo id leo pretium faucibus. Maecenas tempor orci est, nec ornare magna iaculis nec.<br></p>
+                                <p class="text-justify">Curabitur feugiat maximus dui vel fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam varius dui et nulla ultricies, ut interdum enim dapibus. Ut lobortis, lectus ac finibus mattis, ex erat aliquet
+                                    mauris, a hendrerit sem velit nec libero. Sed fermentum mi ac dolor gravida lobortis. Curabitur dapibus sem id elit placerat porttitor. Etiam ullamcorper accumsan libero at laoreet.<br></p>
+                            </div>
+                        </div>
+                        <div class="row nc_item_opciones">
+                            <div class="col-sm-12 nc_item_op1">
+                                <h3 class="nc_titulo">Tareas</h3>
+                                <ul>
+                                    <li>Diseño Gráfico</li>
+                                    <li>Maquetado Web</li>
+                                    <li>Desarrollo en PHP</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 d-none nc_item_op3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-xl-flex" id="nc_item_default" style="height: 100vh;">
+                    <div class="col-12 d-flex flex-column justify-content-center align-items-center justify-content-sm-center align-items-sm-center align-items-lg-center justify-content-xl-center align-items-xl-center nc_item nc_actividad" id="cv_item_default"><i class="far fa-hand-point-up d-lg-none bounce animated infinite" style="font-size: 72px;color: #343a40;margin-top: 29px;margin-bottom: 0px;"></i>
+                        <div class="intro" style="margin-top: 30px;margin-bottom: 30px;">
+                            <h2 class="text-center">Curriculum Vitae de Nicolás Colombero</h2>
+                            <p class="text-center d-lg-none">Para ver detalles de mi perfile, usa el navegador que se encuentra en la parte superior de la pantalla.</p>
+                            <p class="text-center d-none d-lg-block">Para ver detalles de mi perfile, usa el navegador que se encuentra a la izquierda de la pantalla.</p>
+                        </div><i class="far fa-hand-point-left d-none d-lg-block shake animated infinite" style="font-size: 72px;color: #343a40;margin-top: 60px;margin-bottom: 100px;"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-warning d-flex justify-content-xl-center" id="footer">
+        <div class="row d-flex justify-content-lg-center align-items-lg-center" style="width: 100%;">
+            <div class="col-12 text-center d-flex flex-column justify-content-center align-items-lg-center" style="padding: 0px;">
+                <h3 class="text-center nc_titulo_foot">Más sobre mi trabajo</h3>
+                <ul class="text-center justify-content-center list_reset" id="foot_1">
+                    <li>Publicaciones</li>
+                    <li>Prensa</li>
+                    <li>Eventos</li>
+                </ul>
+            </div>
+            <div class="col-sm-12 text-center justify-content-center">
+                <h3 class="text-center nc_titulo_foot">Más sobre mi trabajo</h3>
+                <ul class="list-inline d-block list_reset" id="foot_2">
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-github-alt"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-behance"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-deviantart"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12">
+                <p class="text-center" id="legal">Sitio desarrollado por Nicolas Colombero - 2021&nbsp;<br>CoderHouse - Camada xxxx</p>
+            </div>
+        </div>
+    </footer>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/functions.js"></script>
 </body>
 
 </html>
