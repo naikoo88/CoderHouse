@@ -42,7 +42,7 @@
                     scrollTop: $('#cv_' + $(this).val()).offset().top
                 }, 500); 
             console.log('Escroleo finalizado');
-            $('.selector').val('');
+            $('.selector').val('default');
             console.log('Se reincian los selectores');
             
         });
