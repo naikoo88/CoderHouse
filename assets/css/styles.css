@@ -139,6 +139,8 @@
   padding-left: 0px;
   text-align: center;
   padding-bottom: 0px;
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 
 .nc_titulo_foot {
@@ -206,6 +208,7 @@ ul#foo_1 li {
 .nc_cargo_tit {
   font-size: 2.5em;
   margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 .cv_actividades_icon {
