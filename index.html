@@ -9,25 +9,24 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/Highlight-Blue.css">
-    <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
+    <link rel="stylesheet" href="assets/css/estilos.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md bg-dark navigation-clean-button">
-        <div class="container"><a class="navbar-brand d-flex justify-content-xl-center align-items-xl-center" href="#"><img class="img-fluid float-none justify-content-xl-center align-items-xl-center" src="assets/img/logo.svg" loading="auto" style="min-width: 90px;max-width: 125px;"></a>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top bg-dark navigation-clean-button">
+        <div class="container-fluid"><a class="navbar-brand d-flex justify-content-xl-center align-items-xl-center" href="index.html"><img class="img-fluid float-none justify-content-xl-center align-items-xl-center" src="assets/img/logo.svg" loading="auto" style="min-width: 90px;max-width: 125px;"></a>
             <button
                 data-toggle="collapse" class="navbar-toggler" data-target="#menu" style="color: #ffc107;"><span class="sr-only">Toggle navigation</span><i class="fas fa-bars" style="font-size: 29px;"></i></button>
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="nav navbar-nav mr-auto">
-                        <li class="nav-item"><a class="nav-link active text-warning" href="#">Curriculum</a></li>
-                        <li class="nav-item"><a class="nav-link text-warning" href="#">Sobre Mi</a></li>
-                        <li class="nav-item"><a class="nav-link text-warning" href="#">Objetivos</a></li>
-                        <li class="nav-item"><a class="nav-link text-warning" href="#">Potfolio</a></li>
-                    </ul><span class="navbar-text actions"> <a class="btn btn-warning nc_btn" role="button" data-bs-hover-animate="pulse" id="hire_btn" href="#">CONTRATAR</a></span></div>
+                        <li class="nav-item"><a class="nav-link text-warning" href="#verCV">Curriculum</a></li>
+                        <li class="nav-item"><a class="nav-link text-warning" href="aboutMe.html">Sobre Mi</a></li>
+                        <li class="nav-item"><a class="nav-link text-warning" href="objetives.html">Objetivos</a></li>
+                        <li class="nav-item"><a class="nav-link text-warning" href="portfoil.html">Potfolio</a></li>
+                    </ul><span class="navbar-text actions"> <a class="btn btn-warning nc_btn" role="button" data-bs-hover-animate="pulse" id="hire_btn" href="contact.html">CONTRATAR</a></span></div>
         </div>
     </nav>
     <div class="d-flex d-sm-flex justify-content-center align-items-center justify-content-sm-center justify-content-xl-center" data-bs-parallax-bg="true" id="hero">
@@ -828,20 +827,23 @@
             <div class="col-sm-12 col-md-6 text-center justify-content-center">
                 <h3 class="text-center nc_titulo_foot">Más sobre mi trabajo</h3>
                 <ul class="list-inline d-block list_reset" id="foot_2">
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-github-alt" data-bs-hover-animate="rubberBand"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-behance" data-bs-hover-animate="rubberBand"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-deviantart" data-bs-hover-animate="rubberBand"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in" data-bs-hover-animate="rubberBand"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/naikoo88" target="_blank"><i class="fa fa-github-alt" data-bs-hover-animate="rubberBand"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.behance.net/NColombero" target="_blank"><i class="fa fa-behance" data-bs-hover-animate="rubberBand"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.deviantart.com/naikoo88" target="_blank"><i class="fa fa-deviantart" data-bs-hover-animate="rubberBand"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/nicolas-colombero-0857b864/" target="_blank"><i class="fab fa-linkedin-in" data-bs-hover-animate="rubberBand"></i></a></li>
                 </ul>
             </div>
             <div class="col-sm-12">
-                <p class="text-center" id="legal">Sitio desarrollado por Nicolas Colombero - 2021&nbsp;<br>CoderHouse - Camada xxxx</p>
+                <p class="text-center" id="legal">Sitio desarrollado por Nicolas Colombero - 2021&nbsp;<br>CoderHouse - camada-15645-dw-online</p>
             </div>
         </div>
     </footer>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+    <script src="assets/js/Basic-fancyBox-Gallery.js"></script>
     <script src="assets/js/functions.js"></script>
 </body>
 

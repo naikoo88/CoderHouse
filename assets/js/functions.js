@@ -1,7 +1,7 @@
  $(document).ready(function(){
      
      //OCULTAR TODOS LOS ELEMENTOS DEL CV
-        console.log('Arranco el script');
+        console.log('Arrancó el script');
         $('.nc_item').hide();
         console.log('Se ocultan todos los items');
         $('.nc_item_default').show();
@@ -58,3 +58,12 @@
         });
     });
     
+$(function() {
+    $(".fancybox").fancybox({
+        helpers:  {
+            title : {
+                type : "inside"
+            }
+        }
+    });
+});
