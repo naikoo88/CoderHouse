@@ -1,0 +1,6 @@
+{
+    users: {
+        'user':'nuevo@usuario.com',
+        'password':'contrasena123',
+    }
+}

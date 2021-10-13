@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>Proyecto de Crowfounding Nicolás Colombero - Camada: 16780</title>
+    <meta name="description" content="Crowfounding con facturas o bizcochitos.">
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+
+    <script type="text/javascript">
+    window.onload = pregunta()
+
+    function pregunta(){
+
+        let razones = [
+            ' Porque me parece el proyecto mas distinto a los que estuve viendo',
+            ' Porque es una buena oportunidad para practicar la implementacion de UI y darle un poco de funcionalidad. En algun futuro le implementare algo de backend.'
+        ];
+
+        let troleo = 'Y acá te voy a trolear. Hasta que no escribas "Bootstrap", te voy a romper las bolas con un WHILE molesto por cada letra de la palabra que escribas.';
+
+    let setNumber = prompt('bienvenido a esto que nada tiene que ver con el proyecto html que se va a ver de fondo (si pasas la prueba). Por favor elegi un numero del 1 al 4. Cada numero explica algo de mi Proyecto final')
+
+    if(setNumber < 1 || setNumber > 4) {
+        alert('no te pases de listo, DAME UN NUMERO DE 1 AL 4!!')
+        location.reload();
+    } else{
+
+        switch (setNumber) {
+            case '1': 
+                alert('1!! Mi Proyecto va a ser una plataforma de Crowfounding donde la gente va a poder donar dinero a los proyectos de la gente.')
+                break;
+            case '2':
+                    for(i = 0; i < setNumber; i++) {
+                        alert('Razon N° :' + (i+1)  + razones[i] )    
+                    }
+                    break;
+            case '3':
+                    
+                    var mensaje = prompt(troleo)
+
+                    if(mensaje != 'Bootstrap') {
+                        var n = 0;
+                        while (n < mensaje.length) {
+                            n ++;
+                            alert('Troleado estas!! xD. Te quedan: ' + (mensaje.length - n) + 'alerts más! jajaja')
+                        }
+                        return
+                    } else {
+                        alert('exacto!! voy a estar usando alguna libreria de UI para hacerlo mas lindo')
+                    }
+                    break;   
+            case '4':
+                    alert('No se ya que más poner... ya creo que usé todo. Hice un FOR y un WHILE, declaré un ARRAY, esta respuesta es un CASE de un SWITCH, y para obligarte a que pongas un numero de 1 al 4, usé un IF para validar tu respuesta. Creo que ya estamos ;)')
+                    break;
+
+            default : ("DEL 1 AL 4! Es tan dificil??");
+        }
+    }
+    
+}
+
+
+    </script>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+        <div class="container"><a class="navbar-brand logo" href="#">Matesito</a><button data-toggle="collapse"
+                class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav ml-auto"></ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page projets-page">
+        <section class="portfolio-block projects compact-grid">
+            <div class="heading">
+                <h1>Acá iría algún Título</h1>
+            </div>
+            <div class="row no-gutters">
+
+                <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    <a href="#">
+                        <img class="img-fluid image" src="assets/img/nature/image1.jpg">
+                        <span class="description">
+                            <span class="description-heading">Lorem Ipsum</span>
+                            <span class="description-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet,consectetur adipiscing elit.</span>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    <a href="#">
+                        <img class="img-fluid image" src="assets/img/nature/image1.jpg">
+                        <span class="description">
+                            <span class="description-heading">Lorem Ipsum</span>
+                            <span class="description-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet,consectetur adipiscing elit.</span>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                    <a href="#">
+                        <img class="img-fluid image" src="assets/img/nature/image1.jpg">
+                        <span class="description">
+                            <span class="description-heading">Lorem Ipsum</span>
+                            <span class="description-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet,consectetur adipiscing elit.</span>
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="social-icons">
+                <a href="#">
+                    <i class="icon ion-social-facebook"></i>
+                </a>
+                <a href="#">
+                    <i class="icon ion-social-instagram-outline"></i>
+                </a>
+                <a href="#">
+                    <i class="icon ion-social-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>
